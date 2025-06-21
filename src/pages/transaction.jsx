@@ -2,18 +2,18 @@ import React from "react";
 import TransactionForm from "../components/TransactionForm";
 import TransactionList from "../components/TransactionList";
 
-const transaction = ({
+const Transaction = ({
   transactions,
-  addTransaction,
-  deleteTransaction,
-  editTransaction,
+  addtransaction,
+  deletetransaction,
+  edittransaction,
 }) => {
   return (
     <div>
-      <TransactionForm addTransaction={addTransaction} />
-      <TransactionList transactions={transactions} deleteTransaction={deleteTransaction} editTransaction={editTransaction} />
+      <TransactionForm transactions={transactions} addtransaction={addtransaction}/>
+      <TransactionList transactions={transactions} />
     </div>
   );
 };
 
-export default transaction;
+export default Transaction;

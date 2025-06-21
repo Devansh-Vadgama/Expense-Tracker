@@ -278,3 +278,32 @@ select {
 .trash-button:hover {
   color: rgb(197, 0, 0);
 }
+
+
+
+
+
+
+.transaction-list {
+  margin-top: 2rem;
+}
+
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transaction-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.transaction-item.income {
+  background-color: #e0ffe0;
+}
+
+.transaction-item.expense {
+  background-color: #ffe0e0;
+}

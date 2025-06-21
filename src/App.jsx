@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
-import Dashboard from "./pages/dashboard";
-import Transaction from "./pages/transaction";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Transaction from "./pages/Transaction";
 import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
+
 
 function App() {
   const [transactions, setTransactions] = useState(
@@ -33,17 +34,22 @@ function App() {
       <Navbar />
       <h1 className="main-heading">Expense Tracker</h1>
       <Routes>
-        <Route path="/" element={<Home Transactions={transactions} />} />
-        <Route path="/dashboard" element={<Dashboard Transactions={transactions} />} />
+        <Route path="/" element={<Home transactions={transactions} />} />
+        <Route
+          path="/dashboard"
+          element={<Dashboard transactions={transactions} />}
+        />
         <Route
           path="/transaction"
           element={
-            <Transaction
-              Transactions={transactions}
-              addTransaction={addTransaction}
-              deleteTransaction={deleteTransaction}
-              editTransaction={editTransaction}
-            />
+            <div className="main-container">
+              <Transaction
+                transactions={transactions}
+                addTransaction={addTransaction}
+                deleteTransaction={deleteTransaction}
+                editTransaction={editTransaction}
+              />
+            </div>
           }
         />
       </Routes>
