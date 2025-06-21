@@ -4,14 +4,18 @@ import TransactionList from "../components/TransactionList";
 
 const Transaction = ({
   transactions,
-  addtransaction,
-  deletetransaction,
-  edittransaction,
+  addTransaction,
+  deleteTransaction,
+  editTransaction,
 }) => {
   return (
     <div>
-      <TransactionForm transactions={transactions} addtransaction={addtransaction}/>
-      <TransactionList transactions={transactions} />
+      <TransactionForm addTransaction={addTransaction} transactions={transactions} />
+      <TransactionList
+        transactions={transactions}
+        deleteTransaction={deleteTransaction}
+        editTransaction={editTransaction}
+      />
     </div>
   );
 };
