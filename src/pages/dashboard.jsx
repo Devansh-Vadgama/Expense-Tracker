@@ -1,8 +1,11 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Clock, PieChart, TrendingDown, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTransactions } from "../context/TransactionContext";
 
-function Dashboard({ transactions }) {
+function Dashboard() {
+  const {transactions} = useTransactions();
+  
   const [stats, setStats] = useState({
     total: 0,
     income: 0,

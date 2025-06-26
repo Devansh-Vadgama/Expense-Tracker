@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTransactions } from "../context/TransactionContext";
 
-const Home = ({ transactions }) => {
+const Home = () => {
+  const {transactions} = useTransactions();
+
   const navigate = useNavigate();
 
 

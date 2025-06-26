@@ -2,13 +2,11 @@ import React from "react";
 import TransactionForm from "../components/TransactionForm";
 import TransactionList from "../components/TransactionList";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTransactions } from "../context/TransactionContext";
 
-const Transaction = ({
-  transactions,
-  addTransaction,
-  deleteTransaction,
-  editTransaction,
-}) => {
+const Transaction = () => {
+  const { transactions } = useTransactions();
+
   const balance = transactions.reduce((acc, item) => {
     return item.type === "expense"
       ? acc - Number(item.amount)
@@ -34,15 +32,8 @@ const Transaction = ({
         </Card>
       </div>
 
-      <TransactionForm
-        addTransaction={addTransaction}
-        transactions={transactions}
-      />
-      <TransactionList
-        transactions={transactions}
-        deleteTransaction={deleteTransaction}
-        editTransaction={editTransaction}
-      />
+      <TransactionForm/>
+      <TransactionList/>
     </div>
   );
 };
