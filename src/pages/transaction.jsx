@@ -27,7 +27,7 @@ const Transaction = ({
                 className="sub-heading-medium"
                 style={{ color: balance >= 0 ? "green" : "red" }}
               >
-                ${balance.toLocaleString()}
+                ₹ {balance.toLocaleString()}
               </span>
             </div>
           </CardContent>

@@ -126,7 +126,7 @@ function Dashboard({ transactions }) {
           </CardHeader>
           <CardContent>
             <div className="sub-heading-medium">
-              ${stats.balance.toLocaleString()}
+              ₹ {stats.balance.toLocaleString()}
             </div>
             <p className="text-muted-foreground">
               From {stats.total} transactions
@@ -151,7 +151,7 @@ function Dashboard({ transactions }) {
           </CardHeader>
           <CardContent>
             <div className="sub-heading-medium text-green-500" color="green">
-              ${stats.income.toLocaleString()}
+              ₹ {stats.income.toLocaleString()}
             </div>
             <p className="text-muted-foreground">
               {stats.trend.income.toFixed(1)}% from last month
@@ -176,7 +176,7 @@ function Dashboard({ transactions }) {
           </CardHeader>
           <CardContent>
             <div className="sub-heading-medium text-red-500">
-              ${stats.expenses.toLocaleString()}
+              ₹ {stats.expenses.toLocaleString()}
             </div>
             <p className="text-muted-foreground">
               {stats.trend.expenses.toFixed(1)}% from last month
@@ -239,13 +239,13 @@ function Dashboard({ transactions }) {
                       </p>
                     </div>
                     <div
-                      className={`sub-text style={{fontWeight: 600}} ${
+                      className={`sub-text style={{fontWeight: 600}} ₹ {
                         transaction.type === "expense"
                           ? "text-red-500"
                           : "text-green-500"
                       }`}
                     >
-                      {transaction.type === "expense" ? "-" : "+"}$
+                      {transaction.type === "expense" ? "-" : "+"}₹ 
                       {Number(transaction.amount).toLocaleString()}
                     </div>
                   </div>
@@ -292,13 +292,13 @@ function Dashboard({ transactions }) {
                           <div
                             className="h-full bg-blue-500"
                             style={{
-                              width: `${(amount / stats.expenses) * 100}%`,
+                              width: `₹ {(amount / stats.expenses) * 100}%`,
                             }}
                           ></div>
                         </div>
                       </div>
                       <div className="sub-text" style={{ fontWeight: 600 }}>
-                        ${amount.toLocaleString()}
+                        ₹ {amount.toLocaleString()}
                       </div>
                     </div>
                   ))}

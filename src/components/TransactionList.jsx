@@ -24,7 +24,7 @@ const TransactionList = ({
   }, []);
 
   const handleEditClick = (transaction) => {
-    setEditId(transaction.id);
+    setEditId(transaction._id);
     setEditedTransaction({
       amount: transaction.amount,
       description: transaction.description,
@@ -56,11 +56,11 @@ const TransactionList = ({
         ) : (
           <div className="transactions-container">
             {transactions.map((transaction) => {
-              const isEditing = editId === transaction.id;
+              const isEditing = editId === transaction._id;
 
               return (
                 <div
-                  key={transaction.id}
+                  key={transaction._id}
                   className={`transaction-item ${transaction.type}`}
                 >
                   {isEditing ? (
@@ -157,7 +157,7 @@ const TransactionList = ({
                         <Button
                           variant="destructive"
                           size="sm"
-                          onClick={() => deleteTransaction(transaction.id)}
+                          onClick={() => deleteTransaction(transaction._id)}
                         >
                           Delete
                         </Button>
